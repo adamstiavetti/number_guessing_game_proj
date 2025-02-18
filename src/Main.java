@@ -30,32 +30,23 @@ public class Main {
             System.out.println("You guessed correctly! The number was " + randomNumber + " and it took you " + attempts + " attempt to guess.");
         }
 
-        while (userInput < randomNumber){
-            System.out.println("Hmm.. Your guess is too low. Try again");
-            System.out.println("Enter number: ");
-            userInput = obj1.nextInt();
-            attempts++;
-            if (userInput > randomNumber){
-                System.out.println("Hmm.. Your guess is too high. Try again");
+        while (userInput != randomNumber){
+            if(userInput > randomNumber){
+                System.out.println("Your guess is too high. Try again");
                 System.out.println("Enter number: ");
                 userInput = obj1.nextInt();
                 attempts++;
             }
-        }
-        while (userInput > randomNumber){
-            System.out.println("Your guess is too high. Try again");
-            System.out.println("Enter number: ");
-            userInput = obj1.nextInt();
-            attempts++;
-            if (userInput < randomNumber){
-                System.out.println("Hmm.. Your guess is too low. Try again");
-                System.out.print("Enter number: ");
+            if(userInput < randomNumber){
+                System.out.println("Your guess is too low. Try again");
+                System.out.println("Enter number: ");
                 userInput = obj1.nextInt();
                 attempts++;
             }
+            if (userInput == randomNumber) {
+                System.out.println("You guessed correctly! The number was " + randomNumber + " and it took you " + attempts + " attempts to guesss.");
         }
-        if (userInput == randomNumber) {
-            System.out.println("You guessed correctly! The number was " + randomNumber + " and it took you " + attempts + " attempts to guesss.");
+
         }
     }
 }
